@@ -1,6 +1,18 @@
-# Wasm I/O 2026: Spin Workshop
+# Wasm I/O 2026: SpinKube Workshop
 
-This repository contains the starting point for the workshop. Spin apps are already created and bring some boilerplate.
+This repository contains the starting point for the SpinKube workshop at [Wasm I/O 2026](https://wasm.io). Spin apps are already created and bring some boilerplate.
+
+During the workshop we'll deploy SpinKube and necessary dependencies to a pristine Kubernetes cluster and implement both Spin applications.
+
+## Prerequisites
+
+To code along, you must have the following tools / languages installed on your machine:
+
+- The `spin` CLI (including the `kube` plugin)
+- Rust with the `wasm32-wasip1` target
+- The `kubectl` and `helm` CLIs
+
+Additionally, you must have a Kubernetes cluster. This could either be a fully managed cluster (such as LKE, AKS, or GKE) or a local Kubernetes distribution such as `k3d` or `kind`.
 
 ## Deploying the Database
 
