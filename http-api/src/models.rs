@@ -36,7 +36,7 @@ impl FromStr for TaskStatus {
 
 #[derive(Deserialize)]
 pub struct AddTaskModel {
-    contents: String,
+    pub contents: String,
 }
 
 #[derive(Serialize)]
