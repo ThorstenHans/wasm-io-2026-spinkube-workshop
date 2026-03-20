@@ -20,8 +20,6 @@ export DB_PORT="5432"
 ## Creating the DB Credentials Secret
 
 ```bash
-```
-```
 kubectl create secret generic db-credentials \
   --from-literal=username=$DB_USER \
   --from-literal=password=$DB_PASS \
@@ -29,6 +27,3 @@ kubectl create secret generic db-credentials \
   --from-literal=port=$DB_PORT \
   --from-literal=database=$DB_NAME
 ```
-```
-
-
