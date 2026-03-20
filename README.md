@@ -14,6 +14,25 @@ To code along, you must have the following tools / languages installed on your m
 
 Additionally, you must have a Kubernetes cluster. This could either be a fully managed cluster (such as LKE, AKS, or GKE) or a local Kubernetes distribution such as `k3d` or `kind`.
 
+## Provisioning a Kubernetes Cluster
+
+Instructions shown here use `k3d` to run a simple Kubernetes cluster for development purposes on your local machine leveraging Docker containers.
+
+_If you wanna use `k3d`, you must have the `k3d` CLI and Docker installed on your machine._
+
+To create a new Kubernetes cluster with two nodes, you can use the following command:
+
+```bash
+k3d cluster create spinkube-cluster --agents 2
+```
+
+Once the cluster has been created, it should automatically be set as current context for `kubectl`, verify this using:
+
+```bash
+kubectl config get-contexts
+```
+
+
 ## Deploying the Database
 
 ```bash
