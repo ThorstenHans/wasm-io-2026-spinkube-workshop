@@ -1,0 +1,29 @@
+global:
+  postgresql:
+    auth:
+      username: wasmio26
+      password: wasmio26
+      database: wasmio_db
+
+primary:
+  initdb:
+    scripts:
+      01_init.sql: |
+        CREATE TABLE IF NOT EXISTS tasks (
+            id SERIAL PRIMARY KEY,
+            contents TEXT NOT NULL,
+            status VARCHAR(12) NOT NULL
+        );
+        CREATE TABLE IF NOT EXISTS audit (
+            id SERIAL PRIMARY KEY,
+            task_id INTEGER,
+            ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            message TEXT NOT NULL
+        );
+
+        -- Seed Sample Data
+        INSERT INTO tasks (contents, status) VALUES 
+          ('Install Spin CLI', 'done'),
+          ('Deploy SpinKube to k8s', 'open'),
+          ('Run Wasm workload', 'open'),
+          ('High-five the Wasm IO organizers', 'open');
