@@ -34,6 +34,11 @@ impl FromStr for TaskStatus {
     }
 }
 
+#[derive(Deserialize)]
+pub struct AddTaskModel {
+    contents: String,
+}
+
 #[derive(Serialize)]
 pub struct TaskList {
     tasks: Vec<TaskModel>,
